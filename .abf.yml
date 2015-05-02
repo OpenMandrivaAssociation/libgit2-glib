@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   libgit2-glib-0.0.24.tar.xz: c91bb8feece22c7f98f7f15e976f53b36d38be92
+sources:
+  libgit2-glib-0.22.8.tar.xz: 3da8d369404489562fbd0d0eb27bd35aef9d74c0
