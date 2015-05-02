@@ -65,7 +65,7 @@ find %{buildroot} -name "*.la" -delete
 %{_libdir}/libgit2-glib-%{api}.so.%{major}
 %{_libdir}/libgit2-glib-%{api}.so.%{major}.*
 %{_libdir}/girepository-1.0/Ggit-1.0.typelib
-#%{python3_sitearch}/gi/overrides/*
+%{python3_sitearch}/gi/overrides/*
 
 %files -n %{devname}
 %doc %{_datadir}/gtk-doc/
