@@ -6,7 +6,7 @@
 %define url_ver	%(echo %{version} | cut -d. -f1,2)
 
 Name:		libgit2-glib
-Version:	0.23.8
+Version:	0.26.4
 Release:	1
 Summary:	Git library for GLib
 Group:		System/Libraries
