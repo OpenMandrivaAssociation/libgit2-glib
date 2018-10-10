@@ -53,8 +53,7 @@ developing applications that use %{name}.
 %setup -q
 
 %build
-%meson -Dgtk_doc=true \
-       -Dpython=true
+%meson
 %meson_build
 
 %install
