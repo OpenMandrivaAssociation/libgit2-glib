@@ -18,6 +18,9 @@ BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(libgit2)
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	python-gi
+BuildRequires:  meson
+BuildRequires:	vala-devel
+BuildRequires:	gnome-common
 # (tv) for autoconf:
 BuildRequires:	gnome-common
 # Depend on python3-gobject for the python3 gi overrides directory.
@@ -51,11 +54,12 @@ developing applications that use %{name}.
 %setup -q
 
 %build
-%configure
-%make
+%meson -Dgtk_doc=true \
+       -Dpython=true
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
 
 # Remove unwanted la files
 find %{buildroot} -name "*.la" -delete
