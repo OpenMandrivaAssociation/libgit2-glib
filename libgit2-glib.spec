@@ -18,14 +18,10 @@ BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(libgit2)
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	python-gi
-BuildRequires:  meson
+BuildRequires:       meson
 BuildRequires:	vala-devel
 BuildRequires:	gnome-common
-# (tv) for autoconf:
-BuildRequires:	gnome-common
-# Depend on python3-gobject for the python3 gi overrides directory.
-# If we ever get a libgit2-glib consumer that does not depend on python3,
-# it would probably make sense to split it to a separate subpackage.
+BuildRequires:       pkgconfig(pygobject-3.0)
 Requires:	python-gi
 
 %description
