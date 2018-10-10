@@ -22,6 +22,7 @@ BuildRequires:       meson
 BuildRequires:	vala-devel
 BuildRequires:	gnome-common
 BuildRequires:       pkgconfig(pygobject-3.0)
+BuildRequires:       pkgconfig(libssh2)
 Requires:	python-gi
 
 %description
