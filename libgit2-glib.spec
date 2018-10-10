@@ -16,13 +16,15 @@ Source0:	https://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(libgit2)
-BuildRequires:	pkgconfig(python3)
+BuildRequires:	pkgconfig(python)
 BuildRequires:	python-gi
 BuildRequires:       meson
-BuildRequires:	vala-devel
+BuildRequires:	vala-tools
 BuildRequires:	gnome-common
 BuildRequires:       pkgconfig(pygobject-3.0)
 BuildRequires:       pkgconfig(libssh2)
+BuildRequires:	pkgconfig(vapigen)
+
 Requires:	python-gi
 
 %description
