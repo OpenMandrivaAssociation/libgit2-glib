@@ -13,6 +13,7 @@ Group:		System/Libraries
 License:	LGPLv2+
 URL:		https://wiki.gnome.org/Libgit2-glib
 Source0:	https://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
+# This patch fix build issue () with new libgit2, imported from mga7. (penguin)
 Patch0: libgit2-glib-0.26.4-build-hack.patch
 
 BuildRequires:	pkgconfig(glib-2.0)
@@ -73,7 +74,7 @@ find %{buildroot} -name "*.la" -delete
 #{python3_sitearch}/gi/overrides/*
 
 %files -n %{devname}
-%doc %{_datadir}/gtk-doc/
+
 %{_includedir}/libgit2-glib-%{api}/
 %{_libdir}/libgit2-glib-%{api}.so
 %{_libdir}/pkgconfig/libgit2-glib-%{api}.pc
