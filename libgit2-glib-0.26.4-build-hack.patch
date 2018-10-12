@@ -1,0 +1,24 @@
+Index: libgit2-glib-0.26.4/meson.build
+===================================================================
+--- libgit2-glib-0.26.4/meson.build
++++ libgit2-glib-0.26.4/meson.build	2018-04-02 08:20:38.874140898 +0200
+@@ -1,5 +1,5 @@
+ project('libgit2-glib', 'c',
+-        version: '0.26.4',
++        version: '0.27.0',
+         default_options: [
+           'buildtype=debugoptimized'
+         ],
+Index: libgit2-glib-0.26.4/libgit2-glib/ggit-config.c
+===================================================================
+--- libgit2-glib-0.26.4/libgit2-glib/ggit-config.c
++++ libgit2-glib-0.26.4/libgit2-glib/ggit-config.c	2018-04-02 10:06:54.555440341 +0200
+@@ -295,7 +295,7 @@
+ 	ret = git_config_add_file_ondisk (_ggit_native_get (config),
+ 	                                  path,
+ 	                                  (git_config_level_t)level,
+-	                                  force);
++	                                  force, 0);
+ 	g_free (path);
+ 
+ 	if (ret != GIT_OK)
