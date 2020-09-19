@@ -6,15 +6,13 @@
 %define url_ver	%(echo %{version} | cut -d. -f1,2)
 
 Name:		libgit2-glib
-Version:	0.28.0.1
-Release:	2
+Version:	0.99.0.1
+Release:	1
 Summary:	Git library for GLib
 Group:		System/Libraries
 License:	LGPLv2+
 URL:		https://wiki.gnome.org/Libgit2-glib
 Source0:	https://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
-# This patch fix build issue with new libgit2, imported from mga7. (penguin)
-#Patch0: libgit2-glib-0.26.4-build-hack.patch
 
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
@@ -36,10 +34,19 @@ libgit2-glib is a glib wrapper library around the libgit2 git access library.
 %package -n %{libname}
 Summary:	A glib wrapper library around the libgit2 git access library
 Group:		System/Libraries
+Requires:       python-%{name} = %{version}-%{release}
 
 %description -n %{libname}
 libgit2-glib is a glib wrapper library around the libgit2 git access library.
 
+%package -n python-%{name}
+Summary:        Python 3 bindings for %{name}
+Group:          Development/Python
+BuildArch:      noarch
+Requires:       python-gobject3
+	 	 
+%description -n python-%{name}
+This package contains the Python3 bindings for %{name}.
 
 %package -n %{devname}
 Summary:	Development files for %{name}
@@ -71,13 +78,13 @@ find %{buildroot} -name "*.la" -delete
 %{_libdir}/libgit2-glib-%{api}.so.%{major}
 %{_libdir}/libgit2-glib-%{api}.so.%{major}.*
 %{_libdir}/girepository-1.0/Ggit-1.0.typelib
-%{python3_sitearch}/gi/overrides/*
+
+%files -n python-%{name}
+%{python_sitelib}/gi/overrides/*
 
 %files -n %{devname}
-
 %{_includedir}/libgit2-glib-%{api}/
 %{_libdir}/libgit2-glib-%{api}.so
 %{_libdir}/pkgconfig/libgit2-glib-%{api}.pc
 %{_datadir}/gir-1.0/Ggit-1.0.gir
 %{_datadir}/vala/vapi/*git*
-
