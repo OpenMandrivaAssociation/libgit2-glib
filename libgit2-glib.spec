@@ -44,8 +44,6 @@ Summary:        Python 3 bindings for %{name}
 Group:          Development/Python
 BuildArch:      noarch
 Requires:       python-gobject3
-
-Conflicts:      %{_lib}git2-glib1.0_0 < 0.99.0.1-2
 	 	 
 %description -n python-%{name}
 This package contains the Python3 bindings for %{name}.
