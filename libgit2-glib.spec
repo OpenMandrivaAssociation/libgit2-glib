@@ -80,10 +80,9 @@ find %{buildroot} -name "*.la" -delete
 %{_libdir}/libgit2-glib-%{api}.so.%{major}
 %{_libdir}/libgit2-glib-%{api}.so.%{major}.*
 %{_libdir}/girepository-1.0/Ggit-1.0.typelib
-%{python3_sitearch}/gi/overrides/*
 
 %files -n python-%{name}
-%{python3_sitelib}/gi/overrides/*
+%{python_sitelib}/gi/overrides/*
 
 %files -n %{devname}
 %{_includedir}/libgit2-glib-%{api}/
@@ -91,4 +90,3 @@ find %{buildroot} -name "*.la" -delete
 %{_libdir}/pkgconfig/libgit2-glib-%{api}.pc
 %{_datadir}/gir-1.0/Ggit-1.0.gir
 %{_datadir}/vala/vapi/*git*
-
