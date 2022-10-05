@@ -80,7 +80,7 @@ find %{buildroot} -name "*.la" -delete
 %{_libdir}/girepository-1.0/Ggit-1.0.typelib
 
 %files -n python-%{name}
-%{python_sitelib}/gi/overrides/*
+#{python_sitelib}/gi/overrides/*
 
 %files -n %{devname}
 %{_includedir}/libgit2-glib-%{api}/
