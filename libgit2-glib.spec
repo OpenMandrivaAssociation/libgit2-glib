@@ -1,3 +1,5 @@
+%global optflags %{optflags} -Wno-error -Wno-implicit-function-declaration
+
 %define major	0
 %define api	1.0
 %define libname	%mklibname git2-glib %{api} %{major}
