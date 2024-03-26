@@ -7,7 +7,7 @@
 
 Name:		libgit2-glib
 Version:	1.2.0
-Release:	2
+Release:	3
 Summary:	Git library for GLib
 Group:		System/Libraries
 License:	LGPLv2+
