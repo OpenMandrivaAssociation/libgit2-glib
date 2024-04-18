@@ -9,12 +9,13 @@
 
 Name:		libgit2-glib
 Version:	1.2.0
-Release:	3
+Release:	4
 Summary:	Git library for GLib
 Group:		System/Libraries
 License:	LGPLv2+
 URL:		https://wiki.gnome.org/Libgit2-glib
 Source0:	https://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
+Patch0:		libgit2-glib-libgit2-1.8.0.patch
 
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
@@ -62,13 +63,12 @@ The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
+
+%conf
+%meson
 
 %build
-export CC=gcc
-export CXX=g++
-%meson
 %meson_build
 
 %install
