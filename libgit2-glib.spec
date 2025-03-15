@@ -8,14 +8,14 @@
 %define url_ver	%(echo %{version} | cut -d. -f1,2)
 
 Name:		libgit2-glib
-Version:	1.2.0
-Release:	5
+Version:	1.2.1
+Release:	1
 Summary:	Git library for GLib
 Group:		System/Libraries
 License:	LGPLv2+
 URL:		https://wiki.gnome.org/Libgit2-glib
 Source0:	https://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
-Patch0:		libgit2-glib-libgit2-1.8.0.patch
+#Patch0:		libgit2-glib-libgit2-1.8.0.patch
 
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
